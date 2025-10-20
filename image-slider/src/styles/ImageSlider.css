@@ -1,0 +1,63 @@
+/* -------- IMAGES (base style) --------*/
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+/* -------- CONTAINER --------*/
+
+.slider {
+  position: relative;
+  display: flex;
+  width: 20rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* -------- IMAGES --------*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide {
+  display: none;
+  animation: fadeIn 500ms ease-in;
+}
+.show {
+  display: block;
+}
+
+/* -------- NEXT & PREV BUTTONS (base style) --------*/
+
+.slider > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}

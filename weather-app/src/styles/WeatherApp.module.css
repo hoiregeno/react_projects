@@ -1,0 +1,130 @@
+:root {
+  --text-clr: hsl(180, 100%, 60%);
+}
+
+/* -------- APP TITLE -------- */
+
+.appTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-clr);
+  margin-bottom: 1rem;
+}
+
+/* -------- SEARCH FORM -------- */
+
+.searchForm {
+  display: flex;
+  width: min(20rem, 100%);
+  justify-content: space-between;
+  background-color: hsla(180, 100%, 60%, 0.1);
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.searchForm > input[type="text"] {
+  flex-grow: 1;
+  min-width: 0;
+  background-color: transparent;
+  color: var(--text-clr);
+  padding: 0 1.5rem;
+}
+
+.searchForm > button[type="submit"] {
+  display: flex;
+  background-color: hsl(60, 100%, 70%);
+  color: hsl(180, 100%, 10%);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* -------- LOADING STYLE -------- */
+
+.spinnerContainer {
+  width: 50px;
+  height: 50px;
+  border: 6px solid hsla(180, 100%, 60%, 0.1);
+  border-radius: 50%;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 50px;
+  height: 50px;
+  border: inherit;
+  border-top-color: hsl(180, 100%, 60%);
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* -------- ERROR MESSAGE -------- */
+
+.error {
+  font-weight: 600;
+  color: hsl(0, 100%, 70%);
+  margin-top: 1rem;
+}
+
+/* -------- WEATHER CARD -------- */
+
+.card {
+  margin-top: 2rem;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(240, 100%, 70%),
+    hsl(39, 100%, 55%)
+  );
+  padding: 1.5rem 2rem;
+  border-radius: 25px;
+  box-shadow: 0 0 15px hsla(180, 80%, 30%, 0.3);
+  line-height: 1.7;
+}
+
+.card > h1 {
+  font-weight: 800;
+}
+
+.card > h1,
+.card > h2,
+.card > p {
+  text-align: center;
+}
+
+.card > h2 {
+  margin-top: 1rem;
+}
+
+.card > p {
+  font-weight: 800;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+
+/* -------- WRAPPER -------- */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.right > p {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* -------- LOADING ANIMATION */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

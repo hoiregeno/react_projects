@@ -1,0 +1,50 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  max-width: 17.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.calculator input {
+  font-weight: 800;
+  text-align: right;
+  padding: 0.5rem 1rem;
+  background-color: hsl(60, 95%, 60%);
+  cursor: not-allowed;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  justify-content: center;
+  background-color: hsl(180, 100%, 60%);
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.keys > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-weight: 800;
+  border-radius: 0.25rem;
+  background-color: hsl(180, 100%, 15%);
+  color: hsl(180, 100%, 60%);
+  transition: background-color 100ms ease;
+}
+.keys > button:hover {
+  background-color: hsl(180, 100%, 20%);
+}
+.keys > button:last-child {
+  grid-column: 1 / 5;
+}
+
+.keys > .operators {
+  background-color: hsl(60, 95%, 60%);
+  color: hsl(180, 100%, 15%);
+}
+.keys > .operators:hover {
+  background-color: hsl(60, 95%, 55%);
+}

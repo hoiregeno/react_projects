@@ -1,0 +1,66 @@
+:root {
+  --text-clr: white;
+  --error-clr: hsl(0, 80%, 50%);
+}
+
+.pokemon-sprite__title {
+  font-weight: 800;
+  color: var(--text-clr);
+}
+
+.pokemon-sprite__form {
+  display: flex;
+  gap: 1rem;
+  width: min(20rem, 100%);
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.pokemon-sprite__form > .pokemon-sprite__input,
+.pokemon-sprite__form > .pokemon-sprite__button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0.25rem;
+}
+
+.pokemon-sprite__form > .pokemon-sprite__input {
+  flex-grow: 1;
+  min-width: 0;
+  padding: 0.5rem 1rem;
+  background-color: hsla(180, 100%, 60%, 0.1);
+  color: hsl(180, 100%, 60%);
+  border: 0.15rem solid transparent;
+  transition: border-color 100ms ease;
+}
+
+.pokemon-sprite__form > .pokemon-sprite__input:hover,
+.pokemon-sprite__form > .pokemon-sprite__input:focus {
+  border-color: hsla(180, 100%, 60%, 0.15);
+}
+
+.pokemon-sprite__form > .pokemon-sprite__button {
+  padding: 0 1rem;
+  background-color: hsl(70, 100%, 65%);
+  color: hsl(180, 100%, 10%);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pokemon-sprite__error {
+  color: var(--error-clr);
+}
+
+.pokemon-sprite__form > .pokemon-sprite__button:disabled {
+  background-color: hsl(0, 0%, 25%);
+  color: hsl(0, 0%, 35%);
+}
+
+.pokemon-sprite__meta {
+  line-height: 1.7;
+  color: var(--text-clr);
+}
+
+.pokemon-sprite__meta-value {
+  text-transform: capitalize;
+}

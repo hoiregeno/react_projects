@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(185deg, white, blue);
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 1.5714rem + 3.8095vw, 5rem);
+  font-weight: 800;
+  color: hsl(240, 60%, 15%);
+}

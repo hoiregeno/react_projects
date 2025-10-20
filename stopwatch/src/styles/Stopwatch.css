@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stopwatch {
+  font-size: 4rem;
+  font-weight: 800;
+  color: hsl(180, 100%, 60%);
+  font-family: monospace; /* keeps digits uniform width */
+  display: inline-block; /* prevents block-level shifting */
+  min-width: 12ch; /* or enough width to hold your longest time */
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.btn-container > button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  color: hsl(180, 100%, 5%);
+  transition: background-color 150ms ease;
+}
+
+#start-btn {
+  background-color: greenyellow;
+}
+
+#stop-btn {
+  background-color: tomato;
+}
+
+#reset-btn {
+  background-color: lightseagreen;
+}
+
+#start-btn:hover {
+  background-color: hsl(84, 90%, 50%);
+}
+
+#stop-btn:hover {
+  background-color: hsl(9, 90%, 54%);
+}
+
+#reset-btn:hover {
+  background-color: hsl(177, 80%, 35%);
+}
