@@ -77,7 +77,7 @@ const WeatherApp = () => {
           onChange={(e) => setCityInput(e.target.value)}
         />
         <button type="submit">
-          <SearchIcon width="24" height="24" fill="hsl(180, 100%, 6%)" />
+          <SearchIcon width="24" height="24" fill="hsl(180, 100%, 10%)" />
         </button>
       </form>
 
