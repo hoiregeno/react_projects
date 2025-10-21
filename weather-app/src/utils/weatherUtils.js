@@ -26,6 +26,7 @@ export function getWindDirection(degree = 0) {
  * Returns sensible defaults when input is null/undefined.
  */
 export function getWeatherInfo(data = null) {
+  // No data check
   if (!data) {
     return {
       cityName: "",
