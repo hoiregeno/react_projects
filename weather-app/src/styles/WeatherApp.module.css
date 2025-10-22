@@ -22,6 +22,8 @@
   border-radius: 50px;
 }
 
+/* -------- SEARCH INPUT -------- */
+
 .searchForm > input[type="text"] {
   flex-grow: 1;
   min-width: 0;
@@ -29,6 +31,8 @@
   color: var(--text-clr);
   padding: 0 1.5rem;
 }
+
+/* -------- SEARCH BUTTON -------- */
 
 .searchForm > button[type="submit"] {
   display: flex;
