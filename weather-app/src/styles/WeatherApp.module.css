@@ -1,5 +1,6 @@
 :root {
   --text-clr: hsl(180, 100%, 60%);
+  --space-m: 1rem;
 }
 
 /* -------- APP TITLE -------- */
@@ -8,7 +9,7 @@
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--text-clr);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-m);
 }
 
 /* -------- SEARCH FORM -------- */
@@ -39,7 +40,7 @@
   background-color: hsl(60, 100%, 70%);
   color: hsl(180, 100%, 10%);
   font-weight: 700;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem var(--space-m);
   cursor: pointer;
 }
 
@@ -71,7 +72,7 @@
 .error {
   font-weight: 600;
   color: hsl(0, 100%, 70%);
-  margin-top: 1rem;
+  margin-top: var(--space-m);
 }
 
 /* -------- WEATHER CARD -------- */
@@ -106,7 +107,7 @@
 .card > p {
   font-weight: 800;
   text-transform: capitalize;
-  margin-top: 1rem;
+  margin-top: var(--space-m);
 }
 
 /* -------- WRAPPER -------- */
