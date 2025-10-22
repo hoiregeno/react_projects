@@ -1,5 +1,12 @@
 :root {
+  --accent-clr: hsl(60, 100%, 70%);
   --text-clr: hsl(180, 100%, 60%);
+  --text-clr-dark: hsl(180, 100%, 10%);
+  --error-clr: hsl(0, 100%, 70%);
+  --gradient-clr-blue: hsl(240, 100%, 70%);
+  --gradient-clr-orange: hsl(39, 100%, 55%);
+  --shadow-clr: hsla(180, 80%, 30%, 0.3);
+
   --space-m: 1rem;
   --space-l: 1.5rem;
   --space-xl: 2rem;
@@ -31,7 +38,7 @@
   flex-grow: 1;
   min-width: 0;
   background-color: transparent;
-  color: hsl(60, 100%, 70%);
+  color: var(--accent-clr);
   padding: 0 var(--space-l);
 }
 
@@ -39,8 +46,8 @@
 
 .searchForm > button[type="submit"] {
   display: flex;
-  background-color: hsl(60, 100%, 70%);
-  color: hsl(180, 100%, 10%);
+  background-color: var(--accent-clr);
+  color: var(--text-clr-dark);
   font-weight: 700;
   padding: 0.5rem var(--space-m);
   cursor: pointer;
@@ -64,7 +71,7 @@
   width: 50px;
   height: 50px;
   border: inherit;
-  border-top-color: hsl(180, 100%, 60%);
+  border-top-color: var(--text-clr);
   border-radius: 50%;
   animation: spin 1s ease-in-out infinite;
 }
@@ -73,7 +80,7 @@
 
 .error {
   font-weight: 600;
-  color: hsl(0, 100%, 70%);
+  color: var(--error-clr);
   margin-top: var(--space-m);
 }
 
@@ -83,12 +90,12 @@
   margin-top: var(--space-xl);
   background-image: linear-gradient(
     to bottom,
-    hsl(240, 100%, 70%),
-    hsl(39, 100%, 55%)
+    var(--gradient-clr-blue),
+    var(--gradient-clr-orange)
   );
   padding: 1.5rem 2rem;
   border-radius: 25px;
-  box-shadow: 0 0 15px hsla(180, 80%, 30%, 0.3);
+  box-shadow: 0 0 15px var(--shadow-clr);
   line-height: 1.7;
 }
 
