@@ -17,7 +17,7 @@
 /* -------- APP TITLE -------- */
 
 .appTitle {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 1.317rem + 1.3857vw, 2.5rem);
   font-weight: 800;
   color: var(--text-clr);
   margin-bottom: var(--space-m);
@@ -104,6 +104,7 @@
 /* -------- CARD TEXTS -------- */
 
 .card > h1 {
+  font-size: clamp(1.75rem, 1.317rem + 1.3857vw, 2.5rem);
   font-weight: 800;
 }
 
@@ -114,10 +115,12 @@
 }
 
 .card > h2 {
+  font-size: clamp(1.2rem, 0.7381rem + 1.4781vw, 2rem);
   margin-top: var(--space-m);
 }
 
 .card > p {
+  font-size: clamp(0.95rem, 0.8923rem + 0.1848vw, 1.05rem);
   font-weight: 800;
   text-transform: capitalize;
   margin-top: var(--space-m);
@@ -132,7 +135,7 @@
 }
 
 .right > p {
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 0.8923rem + 0.1848vw, 1.05rem);
   font-weight: 600;
 }
 
