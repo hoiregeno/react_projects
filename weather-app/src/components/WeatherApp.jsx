@@ -91,7 +91,7 @@ const WeatherApp = () => {
         <p className={styles.error}>{errorMessage}</p>
       )}
 
-      {weather && !isLoading && (
+      {weather && !isLoading && !errorMessage && (
         <div className={styles.card}>
           <h1>{`${cityName}, ${country}`}</h1>
           <h2>{`${tempC}°C`}</h2>
