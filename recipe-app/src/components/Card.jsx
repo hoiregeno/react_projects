@@ -6,7 +6,13 @@ function Card() {
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    if (recipe === null) return;
+    if (
+      !recipe ||
+      (Array.isArray(recipe) && recipe.length === 0) ||
+      (typeof recipe === "object" && Object.keys(recipe).length === 0)
+    ) {
+      return;
+    }
     console.log(recipe);
   }, [recipe]);
 
@@ -18,6 +24,8 @@ function Card() {
       return;
     }
 
+    setErr("");
+
     try {
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${cleanFoodName}`
@@ -27,10 +35,15 @@ function Card() {
         throw new Error(`Sorry, "${cleanFoodName}" was'nt found.`);
       }
 
-      const data = await response.json();
-      setRecipe(data);
+      const { meals } = await response.json();
+      if (!meals) {
+        setRecipe(null);
+        setErr(`Sorry, "${cleanFoodName}" wasn't found.`);
+        return;
+      }
+
+      setRecipe(meals);
       setFoodName("");
-      setErr("");
     } catch (error) {
       setErr(err.message);
       console.error(error);
