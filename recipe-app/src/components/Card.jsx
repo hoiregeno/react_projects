@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { extractMealProperties } from "../utils/MealsUtil";
 
 function Card() {
   const [recipe, setRecipe] = useState({});
@@ -13,7 +14,31 @@ function Card() {
     ) {
       return;
     }
-    console.log(recipe);
+
+    const [meal] = extractMealProperties(recipe);
+    const {
+      id,
+      name,
+      category,
+      area,
+      instructions,
+      thumbnail,
+      tags,
+      youtube,
+      source,
+      ingredients,
+    } = meal || {};
+
+    console.log(id);
+    console.log(name);
+    console.log(category);
+    console.log(area);
+    console.log(instructions);
+    console.log(thumbnail);
+    console.log(tags);
+    console.log(youtube);
+    console.log(source);
+    console.log(ingredients);
   }, [recipe]);
 
   async function handleFoodName(e) {
@@ -31,10 +56,6 @@ function Card() {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${cleanFoodName}`
       );
 
-      if (!response.ok) {
-        throw new Error(`Sorry, "${cleanFoodName}" was'nt found.`);
-      }
-
       const { meals } = await response.json();
       if (!meals) {
         setRecipe(null);
@@ -45,7 +66,7 @@ function Card() {
       setRecipe(meals);
       setFoodName("");
     } catch (error) {
-      setErr(err.message);
+      setErr(error.message);
       console.error(error);
     }
   }
