@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 function Card() {
-  const [recipe, setRecipe] = useState(null);
+  const [recipe, setRecipe] = useState({});
   const [foodName, setFoodName] = useState("");
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    if (!recipe) {
-      return;
-    }
-
+    if (recipe === null) return;
     console.log(recipe);
   }, [recipe]);
 
