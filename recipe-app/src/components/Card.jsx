@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Card() {
   const [recipe, setRecipe] = useState(null);
   const [foodName, setFoodName] = useState("");
   const [err, setErr] = useState("");
+
+  useEffect(() => {
+    if (!recipe) {
+      return;
+    }
+
+    console.log(recipe);
+  }, [recipe]);
 
   async function handleFoodName(e) {
     e.preventDefault();
@@ -28,15 +36,22 @@ function Card() {
       setErr("");
     } catch (error) {
       setErr(err.message);
+      console.error(error);
     }
   }
 
   return (
     <>
       <form onSubmit={handleFoodName}>
-        <input type="text" placeholder="Enter food name" />
+        <input
+          type="text"
+          placeholder="Enter food name"
+          value={foodName}
+          onChange={(e) => setFoodName(e.target.value)}
+        />
         <button type="submit">Search</button>
       </form>
+      {err && <p>{err}</p>}
     </>
   );
 }
