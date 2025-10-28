@@ -30,15 +30,15 @@ const WeatherApp = () => {
 
     setIsLoading(true);
     try {
-      const res = await fetch(
+      const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${cleanInput}&appid=${apiKey}&units=metric`
       );
 
-      if (!res.ok) {
+      if (!response.ok) {
         throw new Error(`Couldn't locate "${cleanInput}". Please try again.`);
       }
 
-      const data = await res.json();
+      const data = await response.json();
 
       setWeather(data);
       setErrorMessage("");
