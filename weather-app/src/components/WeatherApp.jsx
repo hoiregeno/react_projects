@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/WeatherApp.module.css";
-import { getWeatherInfo, getWindDirection } from "../utils/weatherUtils";
 import SearchIcon from "../assets/search.svg?react";
+import { getWeatherInfo, getWindDirection } from "../utils/weatherUtils";
 
 const WeatherApp = () => {
   const [weather, setWeather] = useState(null);
