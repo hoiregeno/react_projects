@@ -14,31 +14,6 @@ function Card() {
     ) {
       return;
     }
-
-    const [meal] = extractMealProperties(recipe);
-    const {
-      id,
-      name,
-      category,
-      area,
-      instructions,
-      thumbnail,
-      tags,
-      youtube,
-      source,
-      ingredients,
-    } = meal || {};
-
-    console.log(id);
-    console.log(name);
-    console.log(category);
-    console.log(area);
-    console.log(instructions);
-    console.log(thumbnail);
-    console.log(tags);
-    console.log(youtube);
-    console.log(source);
-    console.log(ingredients);
   }, [recipe]);
 
   async function handleFoodName(e) {
@@ -71,6 +46,20 @@ function Card() {
     }
   }
 
+  const [meal] = extractMealProperties(recipe);
+  const {
+    id,
+    name,
+    category,
+    area,
+    instructions,
+    thumbnail,
+    tags,
+    youtube,
+    source,
+    ingredients,
+  } = meal || {};
+
   return (
     <>
       <form onSubmit={handleFoodName}>
@@ -83,6 +72,15 @@ function Card() {
         <button type="submit">Search</button>
       </form>
       {err && <p>{err}</p>}
+
+      {recipe && (
+        <div>
+          <h1>{name}</h1>
+          <h2>Category: {category}</h2>
+          <p>Area: {area}</p>
+          <p>Instructions: {instructions}</p>
+        </div>
+      )}
     </>
   );
 }
