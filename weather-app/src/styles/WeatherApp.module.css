@@ -12,12 +12,15 @@
   --space-xl: 2rem;
 
   --spinner-size: 50px;
+
+  --text-l: clamp(1.75rem, 1.317rem + 1.3857vw, 2.5rem);
+  --text-s: clamp(0.95rem, 0.8923rem + 0.1848vw, 1.05rem);
 }
 
 /* -------- APP TITLE -------- */
 
 .appTitle {
-  font-size: clamp(1.75rem, 1.317rem + 1.3857vw, 2.5rem);
+  font-size: var(--text-l);
   font-weight: 800;
   color: var(--text-clr);
   margin-bottom: var(--space-m);
@@ -81,9 +84,10 @@
 /* -------- ERROR MESSAGE -------- */
 
 .error {
-  font-weight: 600;
+  font-size: var(--text-s);
   color: var(--error-clr);
   margin-top: var(--space-m);
+  text-align: center;
 }
 
 /* -------- WEATHER CARD -------- */
@@ -104,7 +108,7 @@
 /* -------- CARD TEXTS -------- */
 
 .card > h1 {
-  font-size: clamp(1.75rem, 1.317rem + 1.3857vw, 2.5rem);
+  font-size: var(--text-l);
   font-weight: 800;
 }
 
@@ -120,7 +124,7 @@
 }
 
 .card > p {
-  font-size: clamp(0.95rem, 0.8923rem + 0.1848vw, 1.05rem);
+  font-size: var(--text-s);
   font-weight: 800;
   text-transform: capitalize;
   margin-top: var(--space-m);
@@ -135,7 +139,7 @@
 }
 
 .right > p {
-  font-size: clamp(0.95rem, 0.8923rem + 0.1848vw, 1.05rem);
+  font-size: var(--text-s);
   font-weight: 600;
 }
 
