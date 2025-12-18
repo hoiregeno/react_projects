@@ -1,4 +1,4 @@
-export function getWindDirection(degree = 0) {
+export function getWindDirection(degree) {
   const directions = [
     "N",
     "NNE",
@@ -17,7 +17,12 @@ export function getWindDirection(degree = 0) {
     "NW",
     "NNW",
   ];
-  const index = Math.floor((degree || 0) / 22.5 + 0.5);
+
+  // Force resilience: handle negatives and laps around the circle
+  const normalizedDegree = ((degree % 360) + 360) % 360;
+
+  const index = Math.floor(normalizedDegree / 22.5 + 0.5);
+
   return directions[index % 16];
 }
 
