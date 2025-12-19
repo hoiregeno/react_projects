@@ -50,6 +50,7 @@
 /* -------- SEARCH BUTTON -------- */
 
 .searchForm > button[type="submit"] {
+  flex-shrink: 0;
   display: flex;
   background-color: var(--accent-clr);
   color: var(--text-clr-dark);
