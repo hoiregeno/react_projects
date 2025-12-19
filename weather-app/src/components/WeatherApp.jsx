@@ -20,7 +20,7 @@ const WeatherApp = () => {
   // Fetch our weather data
   const fetchWeather = async (e) => {
     e.preventDefault();
-    const cleanInput = cityInput.trim();
+    const cleanInput = cityInput.trim().toLowerCase();
 
     if (!cleanInput) {
       setErrorMessage("Please enter a city.");
